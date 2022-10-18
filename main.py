@@ -10,7 +10,7 @@ markup = InlineKeyboardMarkup()
 b1 = InlineKeyboardButton('🦧Official Channel🦧',url='t.me/DevelopersPage')
 b2 = InlineKeyboardButton('🦅Official Group🦅',url='t.me/DevelopersChat')
 markup.add(b1,b2)
-markup.add(b3,b4)
+
 @bot.message_handler(commands=['start'])
 def welcome_msg(message):
     user_info = message.from_user
