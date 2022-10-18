@@ -2,6 +2,7 @@
 import os
 import telebot
 from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
+from telebot.utils import user_link
 import pyshorteners
 
 bot = telebot.TeleBot(os.getenv('TgBOT_TOKEN'))
@@ -14,10 +15,7 @@ markup.add(b1,b2)
 @bot.message_handler(commands=['start'])
 def welcome_msg(message):
     user_info = message.from_user
-    first_name = user_info.first_name
-    last_name = user_info.last_name
-    full_name = f'{first_name} {last_name}'
-    bot.send_message(message.chat.id,f'Hello dear {full_name} welcome to bitly link shortener bot 😊\n send me any link i will make short for you using bitly.com\n Please join Channels and Group\n👇👇\t \t  \t \t \t 👇👇',reply_markup = markup)
+    bot.send_message(message.chat.id,f'Hello dear {user_link(user_info)} welcome to bitly link shortener bot 😊\n send me any link i will make short for you using bitly.com\n Please join Channels and Group\n👇👇\t \t  \t \t \t 👇👇',reply_markup = markup,parse_mode="HTML")
   
 @bot.message_handler(func = lambda msg: True)
 def make_short(msg):
