@@ -2,7 +2,7 @@
 import os
 import telebot
 from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
-from telebot.utils import user_link
+from telebot.util import user_link
 import pyshorteners
 
 bot = telebot.TeleBot(os.getenv('TgBOT_TOKEN'))
