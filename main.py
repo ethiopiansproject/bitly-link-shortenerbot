@@ -7,10 +7,8 @@ import pyshorteners
 bot = telebot.TeleBot(os.getenv('TgBOT_TOKEN'))
 
 markup = InlineKeyboardMarkup()
-b1 = InlineKeyboardButton('🦧Official Channel🦧',url='t.me/EthiopiansProject')
-b2 = InlineKeyboardButton('🦅Official Group🦅',url='t.me/Ethiopians_Project')
-b3 = InlineKeyboardButton('📡Tech Channel📡',url='t.me/Ethio_techs')
-b4 = InlineKeyboardButton('🦋Tech Group🦋',url='t.me/Ethio_techs_group')
+b1 = InlineKeyboardButton('🦧Official Channel🦧',url='t.me/DevelopersPage')
+b2 = InlineKeyboardButton('🦅Official Group🦅',url='t.me/DevelopersChat')
 markup.add(b1,b2)
 markup.add(b3,b4)
 @bot.message_handler(commands=['start'])
