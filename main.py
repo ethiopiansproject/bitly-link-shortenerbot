@@ -25,6 +25,6 @@ def make_short(msg):
     shortener = pyshorteners.Shortener(api_key = os.getenv('BITLY_TOKEN'))
     link_shortener = shortener.bitly.short(link)
     print(link_shortener)
-    bot.reply_to(msg,link_shortener,disable_webpage_preview=True)
+    bot.reply_to(msg,link_shortener,disable_web_page_preview=True)
     
 bot.infinity_polling()
